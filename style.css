@@ -1,36 +1,108 @@
 body {
+    color: white;
     width: 100vw;
     height: 100vh;
     box-sizing: border-box;
-    padding: 2%;
     display: grid;
-    grid-template-columns: min-content auto;
-    grid-template-rows: min-content auto;
+    grid-template-columns: 1fr min-content 1fr;
+    grid-template-rows: max-content min-content;
     grid-template-areas: 
-    "title title"
-    "options drawing-grid";
+    "title title title"
+    "options drawing-grid .";
     column-gap: 2%;
-    row-gap: 2%;
+    row-gap: 5%;
+    background: linear-gradient(-45deg, rgb(128, 185, 204), skyBlue, #23a6d5, #56ddbd);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #title {
+    box-sizing: border-box;
+    font-size: 2vw;
+    padding-top: 2%;
     grid-area: title;
-    align-self: center;
+    align-self: start;
     justify-self: center;
+    font-family: 'Rock Salt', cursive;
 }
 
 #options {
+    box-sizing: border-box;
+    padding: 0% 10% 0% 10%;
     grid-area: options;
+    display: grid;
+    grid-template-rows: repeat(11, auto);
+}
+.single-button {    
+    border: 2px solid white;
+    margin: 1%;
+    border-radius: 2px;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;    
+    font-size: 1.2vw;
+    color:white;
+    background-color: transparent;
+    text-align:center;
+    transition: all 0.15s;
+}
+.single-button:hover {
+    transform: scale(1.05);
+}
+.single-button:active {
+    color: transparent;
+    background-color: white;
+}
+.accompanied-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.dual-buttons-margin {
+    margin: 1% 2% 1% 2%;
+}
+#pick-a-color {
+    box-sizing: border-box;
+    width: 98%;
+    height: 100%;
+    margin: 2%;
+    justify-self: center;
+    align-self: center;
+    border: none;
+}
+p {
+    font-size: 30px;
+    align-self: center;
+    justify-self: center;
+    font-family:'Roboto',sans-serif;
+}
+#slider {
+    border-color: white;
 }
 
 #drawing-grid {
-    width: 100%;
-    height: 100%;
+    width: 32.5vw;
+    height: 32.5vw;
     box-sizing: border-box;
     grid-area: drawing-grid;
     border: 1px solid black;
     display: grid;
+    user-select: none;
+    align-self: center;
+    justify-self: center;
+    border: 5px solid rgba(120, 120, 120, 0.35);
+    box-shadow: 0px 0px 2px 2px rgba(120, 120, 120, 0.35);
 }
-span {
-    border: 1px solid rgba(120, 120, 120, 0.5);
+.grid-border {
+    border: 1px solid rgba(120, 120, 120, 0.35);
 }

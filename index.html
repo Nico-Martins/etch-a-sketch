@@ -4,23 +4,31 @@
         <link rel="stylesheet" href="reset.css">
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet"> 
     </head>
     <body>
         <h1 id="title">Etch-A-Sketch</h1>
         
         <div id="options">
-            <div>
-                <div id="slider-value">Value: 16</div>
-                <input autocomplete="off" type="range" min="1" max="60" value="16" id="slider">
+            <p id="slider-value">Value: 16</p>
+            <input autocomplete="off" type="range" min="1" max="60" value="16" id="slider">
+            <button id="black-button" class="single-button">Black</button>
+            <button id="rainbow-button" class="single-button">Rainbow</button>
+            <button id="eraser" class="single-button">Eraser</button>
+            <p>Pick a color:</p>
+            <input type="color" id="pick-a-color"></input>
+            <div class="accompanied-buttons">
+                <button id="brush" class="single-button dual-buttons-margin">Brush</button>
+                <button id="bucket" class="single-button dual-buttons-margin">Bucket</button>
             </div>
-            <button>Black</button>
-            <button>Rainbow</button>
-            <button>Darken</button>
-            <button>Lighten</button>
-            <button>Pick a color</button>
-            <button>Eraser</button>
-            <button>Clear</button>
-            <button>Toggle grid</button>
+            <div class="accompanied-buttons">
+                <button id="darken" class="single-button dual-buttons-margin">Darken</button>
+                <button id="lighten" class="single-button dual-buttons-margin">Lighten</button>
+           </div>
+            <button id="clear" class="single-button">Clear</button>
+            <button id="toggle-grid-button" class="single-button">Toggle grid</button>
         </div>
 
         <div id="drawing-grid"></div>
